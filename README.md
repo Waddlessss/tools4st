@@ -20,7 +20,10 @@ devtools::install_github("Waddlessss/tools4st")
 **Install MSnbase**
 MSnbase is a library to read mzML or mzXML files. Please install it if not.
 ```
-install.packages("MSnbase")
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("MSnbase")
 ```
 
 ## Usage
