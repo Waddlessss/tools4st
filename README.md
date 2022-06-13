@@ -36,7 +36,7 @@ If you are trying to extract ion intensities, another two-column csv file is nee
 
 <img src='man/figures/ionTableExample.png' align="mid" height="200"/>  
 
-### Make a plot for MS scan
+### Make a plot by averaging MS scans
 Now you are ready to make a plot! First, you need to specify the location of your converted raw MS data (mzML or mzXML). This will also be the place of output figures.
 ```
 # Set a working directory
