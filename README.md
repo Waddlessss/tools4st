@@ -34,7 +34,7 @@ The raw MS data need to be converted in mzML or mzXML format.
 
 If you are trying to extract ion intensities, another two-column csv file is needed. The first column contains m/z values of targeted ions, and the second column specifies retention time windows. The retention time start and end should be separated by ";". Here is an example:
 
-<img src='man/figures/ExampleDataTable.PNG' align="mid" height="200"/>  
+<img src='man/figures/ionTableExample.png' align="mid" height="200"/>  
 
 ##
 Specifically, the column names are sample names. The first row includes sample group names. The input feature intensity table can be prepared in .csv format. Your input data table should be similar to this:
