@@ -17,7 +17,7 @@
 #' @export
 #'
 #' @examples
-#' # drawMS(rawData)
+#' # drawMS(rawDataName)
 
 
 drawMS = function(rawDataName, mzRange=c(700,850), rtRange=c(0,Inf), mzTol=0.005, msLevel=1,
