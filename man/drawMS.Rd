@@ -42,5 +42,5 @@ This function outputs a figure in the current working directory.
 Draw an averaged MS scan during a certain retention time.
 }
 \examples{
-# drawMS(rawData)
+# drawMS(rawDataName)
 }
