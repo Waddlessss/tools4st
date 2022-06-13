@@ -11,6 +11,9 @@
 #'
 #' @return
 #' This function either returns the result table or output it to csv file.
+#'
+#' @import MSnbase
+#'
 #' @export
 #'
 #' @examples
@@ -31,8 +34,8 @@ getIntensity = function(rawDataName, ionTableName, mzTol=0.005, msLevel=1, outpu
 
   for (i in 1:length(rt)) {
     rtRange = as.numeric(unlist(strsplit(rt[i], split = ";")))
-    rtFilter = rtime(rawData) <= rtRange[2]*60 & rtime(rawData) >= rtRange[1]*60
-    mzList = mz(rawData)[rtFilter]
+    rtFilter = MSnbase::rtime(rawData) <= rtRange[2]*60 & rtime(rawData) >= rtRange[1]*60
+    mzList = MSnbase::mz(rawData)[rtFilter]
     intList = intensity(rawData)[rtFilter]
 
     for (j in 1:length(mz)) {

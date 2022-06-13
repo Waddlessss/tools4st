@@ -14,6 +14,9 @@
 #'
 #' @return
 #' This function outputs a figure in the current working directory.
+#'
+#' @import MSnbase
+#'
 #' @export
 #'
 #' @examples
@@ -24,7 +27,7 @@ drawMS = function(rawDataName, mzRange=c(700,850), rtRange=c(0,Inf), mzTol=0.005
                   mzLabelDis=20, intLabelTol=3, res=600, dcm=2){
 
   # Read raw MS data
-  rawData = MSnbase::readMSData(files=rawDataName, msLevel.=msLevel)
+  rawData = readMSData(files=rawDataName, msLevel.=msLevel)
 
   # Filter MS scans by defined retention time window
   rtFilter = rtime(rawData) <= rtRange[2]*60 & rtime(rawData) >= rtRange[1]*60
