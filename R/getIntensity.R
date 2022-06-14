@@ -6,7 +6,7 @@
 #' @param rawDataName character. File name of raw MS data (mzML or mzXML).
 #' @param ionTableName character. A csv file specifying the m/z values and retention time windows.
 #' @param mzTol float. m/z tolerance to average spectra.
-#' @param msLevel int. MS level (1 or 2).
+#' @param msLevel int. MS level (1, 2 or 3).
 #' @param output Boolean. Set to \code{TRUE} then output the result table.
 #'
 #' @return

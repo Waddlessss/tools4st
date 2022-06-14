@@ -19,7 +19,7 @@ getIntensity(
 
 \item{mzTol}{float. m/z tolerance to average spectra.}
 
-\item{msLevel}{int. MS level (1 or 2).}
+\item{msLevel}{int. MS level (1, 2 or 3).}
 
 \item{output}{Boolean. Set to \code{TRUE} then output the result table.}
 }

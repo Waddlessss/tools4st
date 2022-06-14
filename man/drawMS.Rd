@@ -25,7 +25,7 @@ drawMS(
 
 \item{mzTol}{float. m/z tolerance to average spectra.}
 
-\item{msLevel}{int. MS level (1 or 2).}
+\item{msLevel}{int. MS level (1, 2 or 3).}
 
 \item{mzLabelDis}{float. A value to specify the range that only one m/z will be labeled, in Da.}
 

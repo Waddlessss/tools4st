@@ -6,7 +6,7 @@
 #' @param mzRange vector. m/z range to plot.
 #' @param rtRange vector. Retention time to average.
 #' @param mzTol float. m/z tolerance to average spectra.
-#' @param msLevel int. MS level (1 or 2).
+#' @param msLevel int. MS level (1, 2 or 3).
 #' @param mzLabelDis float. A value to specify the range that only one m/z will be labeled, in Da.
 #' @param intLabelTol float. Relative intensity larger than this value can be labeled.
 #' @param dcm int. Number of decimals for m/z labels.
