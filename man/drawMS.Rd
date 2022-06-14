@@ -8,7 +8,7 @@ drawMS(
   rawDataName,
   mzRange = c(700, 850),
   rtRange = c(0, Inf),
-  mzTol = 0.005,
+  mzTol = 5e-04,
   msLevel = 1,
   mzLabelDis = 20,
   intLabelTol = 3,
