@@ -25,11 +25,11 @@ getIntensity = function(rawDataName, ionTableName, mzTol=0.005, msLevel=1, outpu
 
   mz = as.numeric(ionTable[,1])
   rt = ionTable[,2]
-  mz = mz[mz!=""]
-  rt = rt[rt!=""]
+  mz = mz[!(mz=="" | is.na(mz))]
+  rt = rt[!(rt=="" | is.na(rt))]
 
   resultTable = data.frame(matrix(nrow = length(mz), ncol = length(rt)))
-  rownames(resultTable) = round(mz,4)
+  rownames(resultTable) = round(mz,2)
   colnames(resultTable) = rt
 
   for (i in 1:length(rt)) {
@@ -42,9 +42,9 @@ getIntensity = function(rawDataName, ionTableName, mzTol=0.005, msLevel=1, outpu
       intSeq = c()
       for (k in 1:length(mzList)) {
         mzDiff = abs(mz[j]-mzList[[k]])
-        idx = which.min(mzDiff)
-        if (mzDiff[idx] < mzTol) {
-          intSeq = c(intSeq, intList[[k]][idx])
+        idx = mzDiff < mzTol
+        if (sum(idx)>0) {
+          intSeq = c(intSeq, max(intList[[k]][idx]))
         }
       }
       resultTable[j,i] = mean(intSeq)
