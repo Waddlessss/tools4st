@@ -47,7 +47,7 @@ getIntensity = function(rawDataName, ionTableName, mzTol=0.005, msLevel=1, outpu
           intSeq = c(intSeq, max(intList[[k]][idx]))
         }
       }
-      resultTable[j,i] = mean(intSeq)
+      resultTable[j,i] = round(mean(intSeq),0)
     }
   }
 
