@@ -23,7 +23,7 @@
 #' # drawMS(rawDataName)
 
 
-drawMS = function(rawDataName, mzRange=c(700,850), rtRange=c(0,Inf), mzTol=0.005, msLevel=1,
+drawMS = function(rawDataName, mzRange=c(700,850), rtRange=c(0,Inf), mzTol=0.001, msLevel=1,
                   mzLabelDis=20, intLabelTol=3, res=600, dcm=2){
 
   # Read raw MS data
