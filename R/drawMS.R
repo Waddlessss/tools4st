@@ -50,7 +50,7 @@ drawMS = function(rawDataName, mzRange=c(700,850), rtRange=c(0,Inf), mzTol=0.005
     mzFilter = mzList[[i]] <= mzRange[2] & mzList[[i]] >= mzRange[1]
     mz = mzList[[i]][mzFilter]
     intensity = intList[[i]][mzFilter]
-    intensity = intensity / max(intensity) * 100
+    # intensity = intensity / max(intensity) * 100
 
     for (j in 1:length(mz)) {
       temp = abs(mz[j]-mzPlot)
@@ -66,7 +66,8 @@ drawMS = function(rawDataName, mzRange=c(700,850), rtRange=c(0,Inf), mzTol=0.005
       }
     }
   }
-
+  mzPlot = mzPlot[-1]
+  intPlot = intPlot[-1]/max(intPlot[-1])*100
   # Plot
   windowsFonts(
     A=windowsFont("Arial")
@@ -74,12 +75,11 @@ drawMS = function(rawDataName, mzRange=c(700,850), rtRange=c(0,Inf), mzTol=0.005
 
   png("image.png", res=600, width = 4.5, height = 4.5, units = 'in')
   par(family="A", bg="transparent")
-  plot(mzPlot[-1], intPlot[-1], type="h", xlab = expression(italic("m/z")), ylab="R.A.",
+  plot(mzPlot, intPlot, type="h", xlab = expression(italic("m/z")), ylab="R.A.",
        cex.lab = 1.5, cex.axis = 1.2, las=1, ylim=c(0,110))
-  mzToLabel = findLabelText(mzPlot, intPlot)
+  mzToLabel = findLabelText(mzPlot, intPlot, mzLabelDis = mzLabelDis, intTol = intLabelTol)
   text(mzToLabel[[1]], mzToLabel[[2]], round(mzToLabel[[1]],dcm), pos = 3)
   dev.off()
-
 }
 
 
