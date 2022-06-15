@@ -47,7 +47,12 @@ getIntensity = function(rawDataName, ionTableName, mzTol=0.005, msLevel=1, outpu
           intSeq = c(intSeq, max(intList[[k]][idx]))
         }
       }
-      resultTable[j,i] = round(mean(intSeq),0)
+
+      if (length(intSeq) == 0) {
+        resultTable[j,i] = "Not detected."
+      } else {
+        resultTable[j,i] = round(mean(intSeq),0)
+      }
     }
   }
 
